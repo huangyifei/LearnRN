@@ -15,10 +15,7 @@ export default class Main extends React.Component {
     }
 
     _pressButton() {
-        const { navigator } = this.props;
-        if(navigator) {
-            navigator.pop();
-        }
+        this.props.navigator.pop();
     }
 
     render() {
