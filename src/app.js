@@ -15,7 +15,7 @@ import {
   Platform,
   TouchableOpacity
 } from 'react-native';
-import Main from './Main.js';
+import Main from './Main';
 
 var nav;
 const defaultRoute = {
@@ -37,7 +37,7 @@ class LearnRN extends Component {
       LeftButton(route, navigator, index, navState) {
         if(index > 0) {
           return (
-            <TouchableOpacity 
+            <TouchableOpacity
               onPress={() => navigator.pop()}
               style={styles.button}>
               <Text style={styles.buttonText}>Back</Text>
@@ -50,7 +50,7 @@ class LearnRN extends Component {
       RightButton(route, navigator, index, navState) {
         if(index > 0 && route.rightButton) {
           return (
-            <TouchableOpacity 
+            <TouchableOpacity
               onPress={() => navigator.pop()}
               style={styles.button}>
               <Text style={styles.buttonText}></Text>
@@ -80,7 +80,7 @@ class LearnRN extends Component {
               height: 0.5,
           },
           shadowColor: '#55ACEE',
-          shadowOpacity: 0.8,          
+          shadowOpacity: 0.8,
           }}
         routeMapper={routeMapper} />
     );
@@ -96,13 +96,13 @@ class LearnRN extends Component {
     );
   }
 
-  componentWillMount(){ 
+  componentWillMount(){
     if (Platform.OS === 'android') {
       BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
     }
-  } 
- 
-  componentWillUnmount(){ 
+  }
+
+  componentWillUnmount(){
     if (Platform.OS === 'android') {
       BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
     }
