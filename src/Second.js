@@ -27,6 +27,13 @@ export default class Main extends React.Component {
             </View>
         );
     }
+
+    componentWillReceiveProps(nextProps) {
+      console.log('Second componentWillReceiveProps nextProps.test:' + nextProps.test);
+    }
+    componentWillUpdate(nextProps, nextState) {
+      console.log('Second componentWillUpdate nextProps.test:' + nextProps.test);
+    }
 }
 
 const styles = StyleSheet.create({

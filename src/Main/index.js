@@ -16,6 +16,7 @@ export default class Main extends React.Component {
         super(props);
         this.state = {
             badge: ' ',
+            test: -1,
         };
     }
 
@@ -26,18 +27,26 @@ export default class Main extends React.Component {
         })
     }
 
+    componentWillReceiveProps(nextProps) {
+      console.log('Main componentWillReceiveProps nextProps.test:' + nextProps.test);
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+      console.log('Main componentWillUpdate nextState.test:' + nextState.test);
+    }
+
     render() {
             return(
                 <View style={styles.container}>
                     <TabBar
                     defaultPage={3}
                     style={styles.content}
-                    onItemSelected={(index) => {console.log('current itemindex is ${index}');}}>
+                    onItemSelected={(index) => {console.log('current itemindex is ' + index);}}>
                         <TabBar.Item
                             icon={require('./img/home_normal.png')}
                             selectedIcon={require('./img/home_selected.png')}
                             onPress={() => {
-                                this.setState({badge: ' ',});
+                                this.setState({badge: ' ', test: 0,});
                             }}
                             title='首页'>
                             <View style={styles.text}>
@@ -49,7 +58,7 @@ export default class Main extends React.Component {
                             icon={require('./img/rank_normal.png')}
                             selectedIcon={require('./img/rank_selected.png')}
                             onPress={() => {
-                                this.setState({badge: 5,});
+                                this.setState({badge: 5, test: 1,});
                             }}
                             title='排行'>
                             <View style={styles.text}>
@@ -62,7 +71,7 @@ export default class Main extends React.Component {
                             selectedIcon={require('./img/message_selected.png')}
                             badge={this.state.badge}
                             onPress={() => {
-                                this.setState({badge: '',});
+                                this.setState({badge: '', test: 2,});
                             }}
                             title='消息'>
                             <View style={styles.text}>
@@ -75,9 +84,7 @@ export default class Main extends React.Component {
                             selectedIcon={require('./img/profile_selected.png')}
                             title='我'>
                               <View style={styles.text}>
-                                <TouchableOpacity onPress={this._pressButton.bind(this)}>
-                                  <Text style={{fontSize: 18}}>Me</Text>
-                                </TouchableOpacity>
+                                  <Second test={this.state.test} />
                               </View>
                         </TabBar.Item>
                     </TabBar>
