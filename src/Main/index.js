@@ -30,7 +30,7 @@ export default class Main extends React.Component {
             return(
                 <View style={styles.container}>
                     <TabBar
-                    defaultPage={2}
+                    defaultPage={3}
                     style={styles.content}
                     onItemSelected={(index) => {console.log('current itemindex is ${index}');}}>
                         <TabBar.Item
@@ -48,6 +48,9 @@ export default class Main extends React.Component {
                         <TabBar.Item
                             icon={require('./img/rank_normal.png')}
                             selectedIcon={require('./img/rank_selected.png')}
+                            onPress={() => {
+                                this.setState({badge: 5,});
+                            }}
                             title='排行'>
                             <View style={styles.text}>
                               <Text style={{fontSize: 18}}>Rank</Text>
