@@ -25,7 +25,7 @@ npm install 'react-native-xtabbar' --save
 
 执行完成后，就可以在源码中使用react-native-xtabbar了。以下为主要代码片段
 
-```
+```javascript
 import TabBar from 'react-native-xtabbar';
 import Second from '../Second.js';
 export default class Main extends React.Component {
@@ -122,7 +122,7 @@ export default class Main extends React.Component {
 - tab切换时修改修改状态test
 
 
-```
+```javascript
 // Main/index.js
     componentWillReceiveProps(nextProps) {
       console.log('Main componentWillReceiveProps nextProps.test:' + nextProps.test);

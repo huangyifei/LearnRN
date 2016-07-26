@@ -162,7 +162,7 @@ _state_和_props_是React中的两种数据模型，理解两者的区别很重�
 
 ### state的作用域
 
-```
+```javascript
 var ProductCategoryRow = React.createClass({
   render: function() {
     return (<tr><th colSpan="2">{this.props.category}</th></tr>);
@@ -285,7 +285,7 @@ ReactDOM.render(
 所以我们在_FilterableProductTable_中持有_state_，然后将_state_作为_props_传递给_ProductTable_和_SearchBar_
 
 ### 反向数据流
-```
+```javascript
 ar ProductCategoryRow = React.createClass({
   render: function() {
     return (<tr><th colSpan="2">{this.props.category}</th></tr>);

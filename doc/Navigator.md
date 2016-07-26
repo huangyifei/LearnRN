@@ -152,7 +152,7 @@ export default class Main extends React.Component {
 }
 ```
 
-```
+```javascript
 // Second.js
 export default class Main extends React.Component {
 
@@ -184,7 +184,7 @@ export default class Main extends React.Component {
 
 #### android的返回按钮处理
 
-```
+```javascript
 // app.js
   componentWillMount(){ 
     if (Platform.OS === 'android') {
