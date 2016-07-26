@@ -8,7 +8,7 @@ React和React-native在编程的思想上是完全一样的，所以要写出好
 
 ![设计草图](./img/1.1.png "设计草图")
 
-而且我们有这样的JSON API
+而且JSON API返回的数据如下
 ```
 [
   {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
@@ -20,7 +20,7 @@ React和React-native在编程的思想上是完全一样的，所以要写出好
 ];
 ```
 
-### 将设计稿分解成Component层次
+### 将设计稿分解成组件树
 
 使用矩形线框来确定_Component_和子_Component_。这里要遵循_**单一职责原则**_，一个_Component_只做一件事情。
 
@@ -29,20 +29,20 @@ React和React-native在编程的思想上是完全一样的，所以要写出好
 1. FilterableProductTable－橙色：根节点
 2. SearchBar－蓝色：处理用户输入
 3. ProductTable－绿色：根据用户输入展现商品列表
-4. ProductCategoryRow－蓝绿色：显示分类名称
+4. ProductCategoryRow－青色：显示分类名称
 5. ProductRow－红色：显示单个商品信息
 
 如下为树状结构
 
-FilterableProductTable
+> FilterableProductTable
 
-> SearchBar
+>> SearchBar
 
->ProductTable
+>> ProductTable
 
->>ProductCategoryRow
+>>> ProductCategoryRow
 
->>ProductRow
+>>> ProductRow
 
 
 ### 完成静态页面
